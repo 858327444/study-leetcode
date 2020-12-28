@@ -57,7 +57,7 @@ public class Solution1351 {
     }
 
     public static void main(String[] args) {
-        int[][] a = {{1,2,-3,-3},{3,4}};
+        int[][] a = {{1,-3},{2,-10},{3,4}};
         System.out.println(countNegatives(a));
     }
 }
