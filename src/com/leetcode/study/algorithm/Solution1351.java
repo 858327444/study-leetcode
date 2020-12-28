@@ -44,7 +44,8 @@ package com.leetcode.study.algorithm;
  * @version 1.0
  */
 public class Solution1351 {
-    public  static int countNegatives(int[][] grid) {
+
+    public static int countNegatives1(int[][] grid) {
         int count = 0;
         for (int[] outIntArr : grid) {
             for (int innerInt : outIntArr) {
@@ -56,8 +57,48 @@ public class Solution1351 {
         return count;
     }
 
+    /**
+     * 方法二：二分查找
+     * 注意到题目中给了一个性质，即矩阵中的元素无论是按行还是按列，都以非递增顺序排列，此处的非递增并不代表有乱序....可以考虑把这个性质利用起来优化暴力。
+     * 已知这个性质告诉了我们每一行的数都是有序的，所以我们通过二分查找可以找到每一行中从前往后的第一个负数，那么这个位置之后到这一行的末尾里所有的数必然是负数了，可以直接统计。
+     *
+     * @param grid
+     * @return
+     */
+    public static int countNegatives(int[][] grid) {
+        int count = 0;
+        int m = grid.length;
+        int n = grid[0].length;
+        //按行来遍历
+        for (int i = 0; i < m; i++) {
+            int left = 0;
+            int right = n - 1;
+            while (left <= right) {
+                int mid = right - (right - left) / 2;
+                if (grid[i][mid] < 0) {
+                    if (mid == 0) {
+                        count += n;
+                        break;
+                    }
+                    if (grid[i][mid - 1] >= 0) {
+                        count += n - mid;
+                        break;
+                    } else {
+                        right = mid - 1;
+                    }
+                } else {
+                    left = mid + 1;
+                }
+            }
+        }
+        return count;
+    }
+
+
     public static void main(String[] args) {
-        int[][] a = {{1,-3},{2,-10},{3,4}};
+        int[][] a = {{1, -3, 2, 0, -8}, {-10, -3, -2, -9, -7}};
+
         System.out.println(countNegatives(a));
+
     }
 }
