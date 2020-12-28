@@ -40,22 +40,13 @@ public class Solution832 {
         for (int i = 0; i < originalArr.length; i++) {
             // 原值
             int[] outArr = originalArr[i];
-            // 水平翻转
-            int[] flipArr = new int[outArr.length];
+            // 水平及反转
+            int[] flipAndInvertArr = new int[outArr.length];
             for (int j = 0; j < outArr.length; j++) {
-                flipArr[j] = outArr[outArr.length - j - 1];
+                flipAndInvertArr[j] = outArr[outArr.length - j - 1] == 0 ? 1 : 0;
             }
-            // 水平翻转后,指向原值
-            originalArr[i] = flipArr;
-            // 水平翻转后的值
-            int[] ints = originalArr[i];
-            for (int j = 0; j < ints.length; j++) {
-                if (ints[j] == 0) {
-                    ints[j] = 1;
-                } else {
-                    ints[j] = 0;
-                }
-            }
+            // 反转后,指向原值
+            originalArr[i] = flipAndInvertArr;
         }
         return originalArr;
     }
