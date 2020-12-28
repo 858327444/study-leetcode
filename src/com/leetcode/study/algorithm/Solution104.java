@@ -47,7 +47,7 @@ class TreeNode {
 }
 
 public class Solution104 {
-    public int maxDepth(TreeNode root) {
+    public  static  int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -56,5 +56,30 @@ public class Solution104 {
         return Math.max(left, right) + 1;
     }
 
+    public static void main(String[] args) {
+        TreeNode treeNode0 = new TreeNode();
+        treeNode0.val = 3;
 
+        TreeNode treeNode1 = new TreeNode();
+        treeNode1.val = 9;
+
+        TreeNode treeNode2 = new TreeNode();
+        treeNode2.val = 20;
+
+        treeNode0.left = treeNode1;
+        treeNode0.right = treeNode2;
+
+        TreeNode treeNode3 = new TreeNode();
+        treeNode3.val = 15;
+
+        TreeNode treeNode4 = new TreeNode();
+        treeNode4.val = 17;
+
+        treeNode2.left = treeNode3;
+        treeNode2.right = treeNode4;
+
+        System.out.println(maxDepth(treeNode0));
+
+
+    }
 }
