@@ -42,7 +42,7 @@ package com.leetcode.study.algorithm;
  */
 public class Solution1323 {
 
-    public static int maximum69Number(int num) {
+    private static int maximum69Number(int num) {
         String str = String.valueOf(num);
         StringBuilder sb = new StringBuilder();
         boolean flag = false;

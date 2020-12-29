@@ -46,13 +46,14 @@ public class Solution804 {
     /**
      * 所有26个英文字母对应摩尔斯密码表
      */
-    public static final String[] morseArray = new String[]{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "." +
+    private static final String[] morseArray = new String[]{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "..."
+            , "-", "..-", "." +
             "." +
             ".-",
             ".--", "-..-", "-.--", "--.."};
 
 
-    public static int uniqueMorseRepresentations(String[] words) {
+    private static int uniqueMorseRepresentations(String[] words) {
         Set<String> resSet = new HashSet<>();
         for (String word : words) {
             char[] chars = word.toCharArray();

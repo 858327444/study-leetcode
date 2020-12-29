@@ -29,7 +29,7 @@ package com.leetcode.study.algorithm;
  * @version 1.0
  */
 public class Solution709 {
-    public static String toLowerCase(String str) {
+    private static String toLowerCase(String str) {
         if (null == str || "".equals(str)) {
             return null;
         }

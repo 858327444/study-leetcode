@@ -65,7 +65,7 @@ public class Solution1351 {
      * @param grid
      * @return
      */
-    public static int countNegatives(int[][] grid) {
+    private static int countNegatives(int[][] grid) {
         int count = 0;
         int m = grid.length;
         int n = grid[0].length;

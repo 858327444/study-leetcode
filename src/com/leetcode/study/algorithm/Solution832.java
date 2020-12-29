@@ -36,7 +36,7 @@ package com.leetcode.study.algorithm;
  */
 public class Solution832 {
 
-    public static int[][] flipAndInvertImage(int[][] originalArr) {
+    private static int[][] flipAndInvertImage(int[][] originalArr) {
         for (int i = 0; i < originalArr.length; i++) {
             // 原值
             int[] outArr = originalArr[i];
